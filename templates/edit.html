@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>ویرایش ابزار</title>
+    <style>
+        body {
+            font-family: 'B Nazanin', sans-serif;
+            background: #f4f7fb;
+            direction: rtl;
+            margin: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            font-family: 'B Nazanin';
+        }
+        button {
+            background: linear-gradient(#007BFF, #0056b3);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>ویرایش ابزار</h2>
+    <form method="POST">
+        <input type="text" name="tool_type" value="{{ item['tool_type'] }}" required>
+        <input type="text" name="serial_number" value="{{ item['serial_number'] }}" required>
+        <input type="text" name="size" value="{{ item['size'] }}">
+        <input type="text" name="thread_type" value="{{ item['thread_type'] }}">
+        <input type="text" name="location" value="{{ item['location'] }}">
+        <select name="status">
+            <option value="{{ item['status'] }}" selected>{{ item['status'] }}</option>
+            <option>Ready to Use</option>
+            <option>Need to Repair</option>
+            <option>Scrap</option>
+        </select>
+        <input type="text" name="description" value="{{ item['description'] }}">
+        <button type="submit">💾 ذخیره تغییرات</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>مدیریت ابزار در گردش</title>
+<style>
+/* همین استایل‌هایی که آخرین بار تایید کردی — تغییر نکرده‌اند */
+body { font-family: 'B Nazanin', sans-serif; background: #f4f7fb; direction: rtl; text-align: center; margin:0; padding:20px; }
+h1 { color: #003366; text-shadow: 1px 1px 3px #ccc; }
+.form-section { background:white; padding:12px; margin-bottom:12px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.06); }
+input, select, button { padding:6px 8px; margin:4px; border-radius:6px; border:1px solid #bbb; font-family:'B Nazanin'; font-size:14px; }
+button { background: linear-gradient(#007BFF,#0056b3); color:white; border:none; border-radius:8px; padding:7px 12px; box-shadow:0 3px 6px rgba(0,0,0,0.12); cursor:pointer; }
+button:hover { transform: translateY(-1px); }
+table { width:100%; border-collapse:collapse; background:white; box-shadow:0 0 10px rgba(0,0,0,0.06); font-size:15px; }
+th, td { border:1px solid #ddd; padding:6px; text-align:center; vertical-align:middle; }
+th { background:#f0f6ff; }
+.actions { display:flex; gap:6px; justify-content:center; align-items:center; }
+td a { color:#007bff; text-decoration:none; }
+td a:hover { text-decoration:underline; }
+th:nth-child(1), td:nth-child(1) { width:40px; }
+th:nth-child(2), td:nth-child(2) { width:120px; }
+th:nth-child(3), td:nth-child(3) { width:110px; }
+th:nth-child(4), td:nth-child(4) { width:60px; }
+th:nth-child(5), td:nth-child(5) { width:340px; }
+th:nth-child(6), td:nth-child(6) { width:120px; }
+th:nth-child(7), td:nth-child(7) { width:90px; }
+th:nth-child(8), td:nth-child(8) { width:110px; }
+th:nth-child(9), td:nth-child(9) { width:160px; }
+th:nth-child(10), td:nth-child(10) { width:120px; }
+input.desc-input { width:95%; border:none; background:transparent; font-family:'B Nazanin'; font-size:14px; text-align:center; }
+@media (max-width:900px){ th:nth-child(5), td:nth-child(5) { width:180px; } table { font-size:14px; } }
+</style>
+</head>
+<body>
+<h1>مدیریت ابزار در گردش</h1>
+
+<div class="form-section">
+  <form action="/add" method="post" enctype="multipart/form-data">
+    <!-- فرم ثبت دستی — tool_type همسر لیست کامل -->
+    <select name="tool_type" required>
+      <option value="">انتخاب نوع ابزار</option>
+      <option>Drill Pipe</option>
+      <option>HWDP</option>
+      <option>Drill Collar</option>
+      <option>Double Box</option>
+      <option>Fishing</option>
+      <option>PUP Joint</option>
+      <option>Bit Sub</option>
+      <option>Saver Sub</option>
+      <option>Cross Over Sub</option>
+      <option>Short Sub</option>
+      <option>Casing Scrapper</option>
+      <option>Uper I-BOP</option>
+      <option>Lower I-BOP</option>
+      <option>Safty Valve</option>
+    </select>
+
+    <input name="serial_number" placeholder="شماره سریال" required style="width:120px;">
+    <input name="size" placeholder="سایز" required style="width:80px;">
+    <input name="thread_type" placeholder="نوع رزوه" required style="width:320px;">
+    <input name="location" placeholder="محل نگهداری" style="width:140px;">
+
+    <select name="status" required>
+      <option value="">وضعیت</option>
+      <option>Ready to Use</option>
+      <option>Need to Repair</option>
+      <option>Need to Sandblast</option>
+      <option>Need to Inspection</option>
+      <option>Scrap</option>
+      <option>Bent</option>
+    </select>
+
+    <label style="margin-left:6px;">گزارش (PDF):</label>
+    <input type="file" name="report_file" accept="application/pdf" style="display:inline-block;">
+    <input name="description" placeholder="شرح / توضیحات" style="width:220px;">
+    <button type="submit">ثبت ابزار</button>
+  </form>
+</div>
+
+<div class="form-section">
+  <form action="/upload_excel" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx">
+    <button type="submit">بارگذاری فایل Excel</button>
+  </form>
+
+  <form action="/" method="get" style="margin-top:10px;">
+    <!-- منوی جستجو: tool_type تکمیل شده -->
+    <select name="tool_type">
+      <option value="">نوع ابزار (همه)</option>
+      <option>Drill Pipe</option>
+      <option>HWDP</option>
+      <option>Drill Collar</option>
+      <option>Double Box</option>
+      <option>Fishing</option>
+      <option>PUP Joint</option>
+      <option>Bit Sub</option>
+      <option>Saver Sub</option>
+      <option>Cross Over Sub</option>
+      <option>Short Sub</option>
+      <option>Casing Scrapper</option>
+      <option>Uper I-BOP</option>
+      <option>Lower I-BOP</option>
+      <option>Safty Valve</option>
+    </select>
+
+    <input name="serial_number" placeholder="شماره سریال">
+    <!-- وضعیت تنها شامل آیتم‌های خواسته‌شده -->
+    <select name="status">
+      <option value="">وضعیت (همه)</option>
+      <option>Ready to Use</option>
+      <option>Need to Repair</option>
+      <option>Need to Sandblast</option>
+      <option>Need to Inspection</option>
+      <option>Scrap</option>
+      <option>Bent</option>
+    </select>
+
+    <input name="location" placeholder="محل نگهداری">
+    <button type="submit">جستجو</button>
+
+    <button type="button" onclick="deleteSelected()" style="background:#e74c3c;margin-left:8px;">حذف موردی</button>
+    <button type="button" onclick="deleteAllFiltered()" style="background:#c0392b;">حذف همه فیلتر شده‌ها</button>
+  </form>
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>نوع ابزار</th>
+  <th>شماره سریال</th>
+  <th>سایز</th>
+  <th>نوع رزوه</th>
+  <th>محل نگهداری</th>
+  <th>وضعیت</th>
+  <th>لینک گزارش</th>
+  <th>شرح / توضیحات</th>
+  <th>عملیات</th>
+</tr>
+</thead>
+<tbody>
+{% for tool in tools %}
+<tr>
+  <td>{{ tool.id }}</td>
+  <td>{{ tool.tool_type }}</td>
+  <td>{{ tool.serial_number }}</td>
+  <td>{{ tool.size }}</td>
+  <td>{{ tool.thread_type }}</td>
+  <td>{{ tool.location }}</td>
+  <td>{{ tool.status }}</td>
+  <td>
+    <form action="/upload_report/{{ tool.id }}" method="post" enctype="multipart/form-data">
+      <input type="file" name="report_file" accept="application/pdf" style="font-size:12px;">
+      <button type="submit" style="margin-top:6px;padding:5px 8px;">آپلود</button>
+    </form>
+    <div style="margin-top:6px;">
+      {% if tool.report_link %}
+        <a href="{{ tool.report_link }}" target="_blank">📄 مشاهده</a>
+      {% else %}
+        -
+      {% endif %}
+    </div>
+  </td>
+  <td>
+    <input class="desc-input" type="text" value="{{ tool.description or '' }}" onblur="updateDescription({{ tool.id }}, this.value)">
+  </td>
+  <td class="actions">
+    <input type="checkbox" class="delete-checkbox" value="{{ tool.id }}">
+    <a href="/edit/{{ tool.id }}"><button>✏️</button></a>
+    <a href="/delete/{{ tool.id }}" onclick="return confirm('آیا مطمئن هستید؟')"><button>🗑️</button></a>
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<script>
+function updateDescription(id, value){
+  fetch('/update_description/' + id, {
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'description=' + encodeURIComponent(value)
+  }).then(res=>res.text()).then(console.log);
+}
+
+function deleteSelected(){
+  let ids = Array.from(document.querySelectorAll('.delete-checkbox:checked')).map(cb => cb.value);
+  if(ids.length === 0){ alert('ابتدا یک یا چند ابزار را انتخاب کنید'); return; }
+  if(confirm('آیا از حذف موردی اطمینان دارید؟')){
+    fetch('/delete_selected', {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: ids.map(i=>'ids='+i).join('&')
+    }).then(()=> location.reload());
+  }
+}
+
+function deleteAllFiltered(){
+  if(confirm('آیا از حذف همه فیلتر شده‌ها اطمینان دارید؟')){
+    let params = new URLSearchParams(new FormData(document.querySelector('.form-section form[action="/"]') || document.forms[1]));
+    fetch('/delete_all_filtered', { method:'POST', body: params }).then(()=> location.reload());
+  }
+}
+</script>
+</body>
+</html>
