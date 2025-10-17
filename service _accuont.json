@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "flasktoolinventory",
+  "private_key_id": "6d8188ef021d2447db4aa44074858dc92dabb92b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5OXLrWIHWYwmP\nAbDJJlhfB2TGONMP/YwJjoyjj7FXz4IJNgWJxHloEqWAERxYwFCppFjImWMfzzry\noMrLyVq9hWK/eDUqhPOpoF3IyDhQpJMHB4VIpIzUlHBDkY0ytduBjZedoRolIlrV\n4KqTkXn3H49harQK290EMyQABEgdMkGLFEm9lt0tTWh4H/DTY53TlMLtRy9SVfAN\nab+jPkD7aW4gKLvzpyXaO5E4GHfKOl8dR0NE3iN5dJAUHraYJ/p6plQRVnLUR9CQ\n2RabzKg6iQ0uRp+o0INvjlXKfQuCnmfmwR/BbBovIfNsWnxMtMiRdW+2LGXmMD45\nGThwUWFnAgMBAAECggEALfHurCs9tbDGX7dTI2pEFHpwiGzzCe3iTUKTZ0UPABGk\nl2VTlVtrpCGv9OcJqYg22gW+0i+eM3dDj4jMFSXCwO0z0/vc8EmfaW2ypcnokjRo\nlh9K8/yBRH/3owMZS8FpjCbTu5GJOznc313F4in9X4vwFIGT3HeySMbowKpPOxJe\nuWrfIB7wQoqX4z8DFj6Vpdi8m0wxz6hUlbRJP74IfhD4qGIOb+pKfk7hIVDb6l3P\ne0dPAdQUgSkrCAcaNyy+HgS6AXWulqZ5SVx8jzcyb45smhCPBhH3ZQY15uHCOzv4\nQ3XB3iT9iSCJAOZusqFXmth0wRbo8RtSlScHj7UAoQKBgQDe5pmaI5pKzdcw7bFv\nAq9+Ji/TlFV/0SJqnIrC7lBI0f2Szb6zIzVLZPsnwQzUotUBS5ZR6DTmZgcbSYjz\nwn6HNwuc4BMry+r7I6EVp6rGhFd5qscSHnJSmj+vnDRfYCHftW2lFxlTQfLHXP+4\nLIyLMmCW8hZ7yUPXpJQF3FLZRwKBgQDUupxklI+BkhGfbAZU8kpZYqJ2G0WeR3n0\nypAv6NI38BPC7GPtXeCzp40giv1p5GsHtcoyh/Ec7m0NN3Yg19XyvoY4Q6cp1Nv6\n+rC/0Y/8dHUtjmytlbDJhYdLUuj/E8BfWj7qY0nUYYSl0i8o3Jd6CS97bfWtxKN2\nhF6SxrFG4QKBgQCrXrtlSE4NiOgTFAvAf14RLKbEklyRomZFdQkyCSrscZX00f31\nl/IXfxGhZMjKik4datGtM0vIf1SjZAvI7RV+O5HQEG5s06BbaO8lyPyBF6pxPh1D\nDulyHGkuSHfzg+NHLSOZM4MjAab4I8XvAUEkm5yrMICctwZTupKbVuLTbQKBgCSy\n1MwdPOyTcGraTfVVnzHwbCqH5ei6V/W9BEbfmXSA/EfCVDLc4SjdHOGiWLlt6HD6\nEZnKDfR5xWJkUQK1eXlZGPqX4Ty8Nf8ERH2y/24EATsMuP7xNgBuArsh4IQwuh05\nCmWRH2l+MU4SBoS8GX26G/DlNV7272RAzbfwgyDBAoGAF6sdCwPNycmKZLQ438ZV\nLLIsk550y80SC7+LmpIM5CJlY6sKaCbpdDfIw8015FiKaChCei4Z7KIL76uJV60h\nwWAnrI/htwTxxnMkef+s41AuQldXCNogIa4vsCyLSffg19An0n3Ih7gR+PFPQvIw\nfdValwt0sf51AoEEs2NytGI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "flask-drive-uploader@flasktoolinventory.iam.gserviceaccount.com",
+  "client_id": "114397694653191199936",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/flask-drive-uploader%40flasktoolinventory.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
