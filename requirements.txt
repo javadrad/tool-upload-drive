@@ -1,6 +1,9 @@
-Flask
-google-auth
-google-auth-oauthlib
-google-auth-httplib2
+Flask==3.0.0
+Werkzeug==3.0.3
+openpyxl
+gunicorn
+requests
 google-api-python-client
-
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
