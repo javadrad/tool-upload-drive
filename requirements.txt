@@ -1,4 +1,6 @@
-Flask==2.3.2
-Werkzeug==2.3.7
-openpyxl==3.1.2
-gunicorn==21.2.0
+Flask
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+
